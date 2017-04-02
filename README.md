@@ -1,10 +1,12 @@
 # Git-plugin-sample
 Sample git plugin
 
-How to install
-Download the files to your local pc
-Run on Terminal; sudo make install
+<b>How to install</b>
+<br/>-Download the files to your local pc
+<br/>-Run on Terminal; <br/>--sudo make install
 
-How to use
-git jema
-git jema hello
+<b>How to use</b><br/>
+  <br/>git jema
+  <br/>git jema hello
+  
+  created by Jema
