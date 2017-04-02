@@ -1,0 +1,39 @@
+#!/usr/bin/env sh
+
+usage() { # This section prints on the screen the different commands available
+    echo "Description:"
+    echo "Plugin created by Jema"
+    echo "Available subcommands are:"
+    echo "hello <name>  Print out Hello World or Hello <name> (if provided)"
+    echo "-v Print version of software"
+    echo "-h Print help"
+    echo
+}
+
+version() { # prints the version of the software on the screen
+    echo "Jema git plugin v1.0"
+    echo
+}
+
+main() { # the main part, where the code starts running
+    if [ "$#" -lt 1 ]; then # -lt= means less than , in this case less than one means no value was entered
+        usage; exit 1 #prints the usage from above
+    fi # ends the if statement
+
+    local subcommand="$1"; shift # defines a new local variable as subcommand, $0= first_input $1= second_input ...
+    # shift here means, move numbering one step up i.e second input becomes first_input, since these are git commands which always begin with the word "git" so main command becomes $0 and subcommand becomes $1
+
+    case $subcommand in
+        "-h"|"--help")
+            usage; exit 0
+            ;;
+        "-v"|"--version")
+            version; exit 0
+            ;;
+        "hello")
+            echo Hello World!; exit 0
+            ;;
+    esac # end of case
+}
+
+main "$@"
